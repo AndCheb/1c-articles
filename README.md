@@ -1,45 +1,31 @@
 # Вики по 1С
 
-Личная база знаний по 1С на [MkDocs Material](https://squidfunk.github.io/mkdocs-material/), публикуется на GitHub Pages.
+Личная база знаний по **1С:Предприятие** — язык, конфигурации, администрирование, интеграции и практические рецепты.
 
-## Команды
+**Читать онлайн:** https://andcheb.github.io/1c-articles/
 
-Все команды выполняются в PowerShell из корня репозитория, без активации venv.
+## О проекте
 
-| Действие | Команда |
+Статьи пишутся в Markdown, сайт собирается генератором [MkDocs Material](https://squidfunk.github.io/mkdocs-material/): полнотекстовый поиск, теги, вкладки разделов, тёмная и светлая темы.
+
+Каждый push в `main` автоматически пересобирает сайт и публикует его на GitHub Pages — workflow [.github/workflows/deploy.yml](.github/workflows/deploy.yml). Правила наполнения — в [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Разделы
+
+| Раздел | О чём |
 |---|---|
-| Локальный просмотр | `.venv\Scripts\mkdocs serve` → http://127.0.0.1:8000 |
-| Разовая сборка | `.venv\Scripts\mkdocs build` |
-| Установка зависимостей (после клонирования) | `py -m venv .venv; .venv\Scripts\python -m pip install -r requirements.txt` |
+| [Основы](https://andcheb.github.io/1c-articles/basics/) | платформа, режимы работы, базовые понятия |
+| [Язык 1С](https://andcheb.github.io/1c-articles/language/) | синтаксис, типы, коллекции, запросы |
+| [Конфигурации](https://andcheb.github.io/1c-articles/configuration/) | объекты метаданных, типовые конфигурации |
+| [Администрирование](https://andcheb.github.io/1c-articles/admin/) | обслуживание баз, пользователи, резервные копии |
+| [Интеграции](https://andcheb.github.io/1c-articles/integration/) | HTTP-сервисы, OData, SOAP, планы обмена |
+| [Рецепты](https://andcheb.github.io/1c-articles/recipes/) | короткие решения типовых задач |
 
-## Как добавить статью
+## Релизы
 
-1. Скопируй `templates/article-template.md` в нужный раздел `docs/<раздел>/` под именем статьи (например, `docs/recipes/http-request.md`).
-2. Заполни заголовок и текст; теги из метаданных `tags` автоматически попадают на страницу тегов.
-3. Если раздел новый — добавь пункт в `nav` в `mkdocs.yml`.
-4. Проверь локально: `.venv\Scripts\mkdocs serve`.
-5. Коммит и `git push` — сайт обновится автоматически через 1–2 минуты (GitHub Actions).
+Версии фиксируются тегами `v*` на значимых изменениях.
 
-## Скриншоты и картинки
-
-1. Клади картинки в `docs/assets/<раздел>/`, имена латиницей без пробелов: `docs/assets/recipes/http-request.png`.
-2. Вставляй в статью относительной ссылкой. Из `docs/recipes/article.md` путь к картинке:
-   `![Описание скрина](../assets/recipes/http-request.png)`
-3. Размер задаётся фигурными скобками: `![Скрин](../assets/recipes/http-request.png){ width="600" }`.
-4. Тяжёлые скрины жми перед коммитом: PNG/JPG желательно до 300–500 КБ (лимит GitHub — 100 МБ на файл, но страница грузится быстрее с лёгкими картинками). Скрины делай через `Win+Shift+S`.
-5. Картинки коммитятся и уезжают на GitHub вместе со статьёй — отдельной загрузки на сайт не нужно.
-
-## Структура
-
-```
-docs/            — статьи (Markdown), попадают на сайт
-  basics/        — Основы
-  language/      — Язык 1С
-  configuration/ — Конфигурации
-  admin/         — Администрирование
-  integration/   — Интеграции
-  recipes/       — Рецепты
-  assets/        — картинки для статей
-templates/       — шаблоны (на сайт не попадают)
-.github/workflows/deploy.yml — автодеплой на GitHub Pages
-```
+| Версия | Дата | Изменения |
+|---|---|---|
+| v0.2.0 | 2026-10-26 | Правила оформления скриншотов, каталог `docs/assets` |
+| v0.1.0 | 2026-10-26 | Первая публикация: каркас сайта, 6 разделов, автодеплой на GitHub Pages |
