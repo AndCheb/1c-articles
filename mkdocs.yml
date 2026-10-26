@@ -1,0 +1,74 @@
+# Вики по 1С — MkDocs Material
+site_name: Вики по 1С
+site_description: База знаний по 1С:Предприятие — язык, конфигурации, администрирование, интеграции
+site_author: Andrey Cheban
+# site_url заполняется после создания репозитория на GitHub, см. Этап 3 плана
+site_url: ""
+
+repo_url: ""
+# edit_uri добавим вместе с repo_url после создания репозитория (полный URL)
+
+theme:
+  name: material
+  language: ru
+  features:
+    - content.code.copy
+    - content.tabs.link
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+      primary: indigo
+      toggle:
+        icon: material/weather-night
+        name: Тёмная тема
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Светлая тема
+
+plugins:
+  - search
+  - tags
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: "#"
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.mark
+  - pymdownx.keys
+
+# Подсветка кода 1С: встроенного лексера нет, используем gherkin —
+# ключевые слова (Процедура/Если/Тогда) подсвечиваются корректно
+copyright: Материалы для личного использования
+
+nav:
+  - Главная: index.md
+  - Основы:
+      - basics/index.md
+  - Язык 1С:
+      - language/index.md
+  - Конфигурации:
+      - configuration/index.md
+  - Администрирование:
+      - admin/index.md
+  - Интеграции:
+      - integration/index.md
+  - Рецепты:
+      - recipes/index.md
