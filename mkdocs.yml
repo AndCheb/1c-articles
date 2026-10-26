@@ -2,11 +2,11 @@
 site_name: Вики по 1С
 site_description: База знаний по 1С:Предприятие — язык, конфигурации, администрирование, интеграции
 site_author: Andrey Cheban
-# site_url заполняется после создания репозитория на GitHub, см. Этап 3 плана
-site_url: ""
+site_url: https://andcheb.github.io/1c-articles/
 
-repo_url: ""
-# edit_uri добавим вместе с repo_url после создания репозитория (полный URL)
+repo_url: https://github.com/AndCheb/1c-articles
+repo_name: AndCheb/1c-articles
+edit_uri: blob/main/docs/
 
 theme:
   name: material
