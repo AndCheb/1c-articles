@@ -63,6 +63,7 @@ nav:
   - Основы:
       - basics/index.md
       - basics/platform.md
+      - basics/three-tier-architecture.md
   - Язык 1С:
       - language/index.md
   - Конфигурации:
