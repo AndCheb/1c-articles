@@ -62,6 +62,7 @@ nav:
   - Главная: index.md
   - Основы:
       - basics/index.md
+      - basics/platform.md
   - Язык 1С:
       - language/index.md
   - Конфигурации:
